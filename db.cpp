@@ -26,7 +26,6 @@ mongocxx::stdx::optional<mongocxx::result::insert_one> DB::insert(DirectorContex
     bsoncxx::document::value doc = builder << bsoncxx::builder::stream::finalize;
 
 	std::cout << bsoncxx::to_json(doc.view()) << std::endl;
-	
 	auto res = coll.insert_one(doc.view());
 
 	return res;
